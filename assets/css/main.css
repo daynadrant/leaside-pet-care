@@ -1466,8 +1466,3 @@ button[type="submit"]:hover,
   filter: drop-shadow(0 0 10px hotpink);
   transition: all 0.3s ease;
 }
-
-
-.tight-section-title {
-  margin-bottom: 1rem;
-}
