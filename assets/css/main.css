@@ -1459,3 +1459,15 @@ button[type="submit"]:hover,
   display: inline-block;
   text-align: center;
 }
+
+.fancy-frame {
+  border: 6px dashed hotpink;
+  border-radius: 50% 60% 55% 45% / 40% 50% 60% 50%;
+  filter: drop-shadow(0 0 10px hotpink);
+  transition: all 0.3s ease;
+}
+
+
+.tight-section-title {
+  margin-bottom: 1rem;
+}
