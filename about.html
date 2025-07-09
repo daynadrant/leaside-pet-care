@@ -32,26 +32,26 @@
 
 <body class="about-page">
 
-<header id="header" class="header d-flex align-items-center light-background sticky-top">
+  <header id="header" class="header d-flex align-items-center light-background sticky-top">
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
 
       <div class="header-contact d-flex align-items-center">
-        <a href="tel:+1234567890" class="d-flex align-items-center me-3 text-decoration-none text-dark">
-          <i class="bi bi-telephone-fill me-1" style="color: hotpink;"></i>
-          <a href="tel:16472064841" style="color: inherit; text-decoration: none;">(647) 206-4841</a>
-          &nbsp; <span class="d-none d-md-inline">|</span> &nbsp;
+        <a href="tel:16472064841" class="d-flex align-items-center text-decoration-none text-dark header-phone-link">
+          <i class="bi bi-telephone-fill me-1 header-contact-icon"></i>
+          <span class="header-contact-text">(647) 206-4841</span>
         </a>
-        <a href="mailto:youremail@example.com" class="d-flex align-items-center text-decoration-none text-dark">
-          <i class="bi bi-envelope-fill me-1" style="color: hotpink;"></i>
-          <a href="mailto:catsrule999@icloud.com"
-            style="color: inherit; text-decoration: none;">catsrule999@icloud.com</a>
+        <span class="d-none d-md-inline ms-2 me-2 text-muted header-separator">|</span>
+        <a href="mailto:catsrule999@icloud.com"
+          class="d-flex align-items-center text-decoration-none text-dark header-email-link">
+          <i class="bi bi-envelope-fill me-1 header-contact-icon"></i>
+          <span class="header-contact-text">catsrule999@icloud.com</span>
         </a>
       </div>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -80,29 +80,27 @@
           <p class="mb-1">
             I'm Dayna - a lifelong animal lover, Leaside local, and trusted pet care provider with 10 years of
             hands-on experience. <br>
-            I started cat sitting in my neighbourhood at just 9 years old, and since built a loyal base of happy pets
-            (and
-            even happier humans). <br>
+            I started working for Leaside pet owners at just 9 years old, and since built a loyal base of happy pets
+            (and even happier humans). <br>
             I'm confident caring for pets of all ages and personalities, with extensive experience in feeding, playtime,
             grooming, and administering medication. <br>
             Most importantly, I know how hard it can be to leave your pet behind. <br> That's why I bring peace of mind,
-            daily
-            updates, and extra love with every visit! 🐾
+            daily updates, and extra love with every visit 🐾
           </p>
 
-        <div class="row gy-4 justify-content-center mt-2 mb-2">
-          <div class="col-lg-4">
-            <img src="assets/img/mewethan.jpg" class="img-fluid fancy-frame" alt="">
+          <div class="row gy-4 justify-content-center mt-2 mb-2">
+            <div class="col-lg-4">
+              <img src="assets/img/mewethan.jpg" class="img-fluid fancy-frame" alt="">
+            </div>
+            <div class="col-lg-4">
+              <img src="assets/img/youngme.jpg" class="img-fluid fancy-frame" alt="">
+            </div>
           </div>
-          <div class="col-lg-4">
-            <img src="assets/img/youngme.jpg" class="img-fluid fancy-frame" alt="">
-          </div>
-        </div>
 
-        <p class="text-center mt-3" style="font-family: 'Raleway', sans-serif;">
-          References available upon request.
-        </p>
-</div>
+          <p class="text-center mt-3" style="font-family: 'Raleway', sans-serif;">
+            References available upon request.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -224,28 +222,30 @@
 
     </section>/Testimonials Section -->
 
-<div class="row justify-content-center">
-    <div class="col-12 col-md-10 col-lg-8"> <form id="contact-form" class="p-3 p-md-4"> <div class="row gy-4">
-                <div class="col-12 col-md-6"> <label for="name-field" class="pb-2">Your Name</label>
-                    <input type="text" name="name" id="name-field" class="form-control" required />
-                </div>
-                <div class="col-12 col-md-6"> <label for="email-field" class="pb-2">Your Email</label>
-                    <input type="email" name="email" id="email-field" class="form-control" required />
-                </div>
-                <div class="col-12"> <label for="subject-field" class="pb-2">Subject</label>
-                    <input type="text" name="subject" id="subject-field" class="form-control" required />
-                </div>
-                <div class="col-12"> <label for="message-field" class="pb-2">Message</label>
-                    <textarea name="message" id="message-field" rows="10" class="form-control" required></textarea>
-                </div>
-                <div class="col-12 text-center"> <button type="submit" class="btn btn-primary mt-3 mb-3">Send Message</button> </div>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8">
+        <form id="contact-form" class="p-3 p-md-4">
+          <div class="row gy-4">
+            <div class="col-12 col-md-6"> <label for="name-field" class="pb-2">Your Name</label>
+              <input type="text" name="name" id="name-field" class="form-control" required />
             </div>
+            <div class="col-12 col-md-6"> <label for="email-field" class="pb-2">Your Email</label>
+              <input type="email" name="email" id="email-field" class="form-control" required />
+            </div>
+            <div class="col-12"> <label for="subject-field" class="pb-2">Subject</label>
+              <input type="text" name="subject" id="subject-field" class="form-control" required />
+            </div>
+            <div class="col-12"> <label for="message-field" class="pb-2">Message</label>
+              <textarea name="message" id="message-field" rows="10" class="form-control" required></textarea>
+            </div>
+            <div class="col-12 text-center"> <button type="submit" class="btn btn-primary mt-3 mb-3">Send
+                Message</button> </div>
+          </div>
         </form>
+      </div>
     </div>
-</div>
 
   </main>
-
 
   <footer id="footer" class="footer light-background">
     <div class="container py-4">
@@ -273,10 +273,18 @@
           </div>
         </div>
 
-        <div class="credits text-center"> Designed by <a href="https://bootstrapmade.com/" target="_blank"
-            rel="noopener noreferrer" style="color: hotpink">BootstrapMade</a> Distributed by <a
-            href="https://themewagon.com" target="_blank" rel="noopener noreferrer"
-            style="color: hotpink">ThemeWagon</a>
+        <div class="footer-contact-info text-center mb-3">
+          <p class="mb-1">
+            <a href="tel:16472064841" style="color: hotpink; text-decoration: none;">(647) 206-4841</a> | <a
+              href="mailto:catsrule999@icloud.com"
+              style="color: hotpink; text-decoration: none;">catsrule999@icloud.com</a>
+          </p>
+        </div>
+
+        <div class="credits text-center" style="margin-top: -5px; margin-bottom: -30px;"> Designed by <a
+            href="https://bootstrapmade.com/" target="_blank" rel="noopener noreferrer"
+            style="color: hotpink">BootstrapMade</a> Distributed by <a href="https://themewagon.com" target="_blank"
+            rel="noopener noreferrer" style="color: hotpink">ThemeWagon</a>
         </div>
 
       </div>

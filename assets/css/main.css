@@ -1631,17 +1631,11 @@ button[type="submit"]:hover,
     /* Alignment is primarily handled by Bootstrap classes on this div */
 }
 
-/* --- Copyright Statement Styles --- */
-#footer .copyright {
-    /* No specific CSS needed here beyond Bootstrap's text-center/text-md-start */
-    /* Add any font/color styles if not inherited */
-}
-
 /* --- Links & Social Row Styles --- */
 #footer .links-and-social-row {
     /* This row specifically handles the links and social icon side-by-side on desktop */
     width: 100%; /* Important for centering its content on mobile */
-    justify-content: center; /* Center links & social horizontally on mobile */
+    justify-content: center; /* Center links & social horizontally on mobile (will be overridden on desktop) */
     /* me-md-4 on footer-nav-container handles spacing on desktop */
 }
 
@@ -1652,7 +1646,7 @@ button[type="submit"]:hover,
     margin: 0; /* Remove default margin */
     display: flex;
     flex-direction: column; /* Force the list to be vertical at all times */
-    align-items: center; /* Center individual links horizontally on mobile */
+    align-items: center; /* Center individual links horizontally on mobile (will be overridden on desktop) */
     align-items: flex-start; /* Align individual links to the left on desktop */
 }
 
@@ -1676,18 +1670,6 @@ button[type="submit"]:hover,
     color: var(--primary-color); /* Your theme's primary color on hover */
 }
 
-/* --- Social Links Styles --- */
-#footer .social-links {
-    /* No specific CSS needed here beyond Bootstrap's d-flex justify-content-center */
-    /* The HTML structure handles its positioning */
-}
-
-/* --- Bootstrap Credits Styles --- */
-#footer .credits {
-    /* No specific CSS needed here beyond Bootstrap's text-center/text-md-start */
-    /* Add any font/color styles if not inherited */
-}
-
 /* --- Responsive Adjustments (Specific Overrides for Mobile) --- */
 /* Apply ONLY to screens 767.98px wide or smaller (typical phones/small tablets) */
 @media (max-width: 767.98px) {
@@ -1698,26 +1680,36 @@ button[type="submit"]:hover,
         text-align: center; /* Center text within these blocks */
     }
 
-    /* Stack links and social vertically on mobile */
+    /* Make links and social appear horizontally on mobile */
     #footer .links-and-social-row {
-        flex-direction: column !important; /* Force stacking on mobile */
-        align-items: center !important; /* Center the links and social icon block */
+        flex-direction: row !important; /* CRITICAL: Force horizontal layout on mobile */
+        justify-content: center !important; /* Center the entire row of links+social horizontally */
+        align-items: center !important; /* Vertically align items (list and icon) in this row */
+        width: auto !important; /* Allow width to adjust to content */
+        max-width: 100% !important; /* Ensure it doesn't break out */
     }
 
-    /* Remove margin from nav container on mobile as it's stacked */
+    /* Add space between nav container and social icon on mobile */
     #footer .footer-nav-container {
-        margin-right: 0 !important;
-        margin-bottom: 15px; /* Add space between links and social when stacked */
+        margin-right: 15px !important; /* Space to the right of the vertical list */
+        margin-bottom: 0 !important; /* Remove bottom margin if it was set for stacking */
+        display: flex; /* Ensure it's a flex container for its list */
+        flex-direction: column; /* Keep its content (the list) vertical */
     }
 
-    /* Ensure list items are centered within their list on mobile */
+    /* Ensure list items align to the start (left) within the vertical list */
     #footer .footer-nav-list {
-        align-items: center !important; /* Center the list items themselves */
+        align-items: flex-start !important; /* Align the list items to the left within the list */
     }
 
     /* General text alignment overrides for mobile */
     #footer .text-md-start {
         text-align: center !important;
+    }
+
+    /* Ensure the social links are aligned as well */
+    #footer .social-links {
+        justify-content: flex-start !important; /* Align its content (icon) to the start */
     }
 }
 
@@ -1732,3 +1724,98 @@ button[type="submit"]:hover,
     }
 }
 
+/* --- Header Contact Icons (Phone/Email) - Global Style --- */
+#header .header-contact .header-contact-icon {
+    color: hotpink; /* Set your desired icon color here */
+    flex-shrink: 0; /* Prevent icons from shrinking */
+}
+
+/* --- Header Contact Text (Phone/Email) - Global Style --- */
+#header .header-contact .header-contact-text {
+    white-space: nowrap; /* Prevents text itself from wrapping (important to stop truncation) */
+    overflow: visible;   /* Ensure text is not hidden */
+    text-overflow: clip; /* Prevent ellipsis */
+    flex-shrink: 0;      /* CRITICAL: Prevent text from shrinking on mobile */
+    min-width: unset;    /* Ensure no minimum width is forcing truncation */
+    max-width: fit-content; /* Allow text to take only as much space as needed */
+}
+
+/* --- Mobile Specific Header Adjustments (Applies below 992px) --- */
+@media (max-width: 991.98px) { /* Standard Bootstrap breakpoint for 'lg' */
+
+    /* Ensure the main .container-fluid is a flex container and aligns items to the left */
+    #header .container-fluid {
+        display: flex !important; /* Ensure it's a flex container */
+        flex-wrap: nowrap !important; /* Crucial: Prevents main header sections from wrapping */
+        justify-content: flex-start !important; /* Align content to the LEFT */
+        align-items: center !important; /* Vertically center items */
+        padding-left: 15px; /* Re-add standard padding */
+        padding-right: 15px; /* Re-add standard padding */
+        width: auto !important; /* Allow container to shrink to fit content */
+        max-width: none !important; /* Remove any max-width constraints */
+    }
+
+    /* Adjust the header-contact block (phone/email group) on mobile */
+    #header .header-contact {
+        display: flex !important; /* Ensure it's a flex container */
+        flex-wrap: nowrap !important; /* CRUCIAL: Keeps phone and email links horizontal within this block */
+        flex-shrink: 0 !important; /* CRITICAL: Prevent the entire block from shrinking on mobile */
+        flex-grow: 0 !important; /* Prevent it from growing */
+        min-width: unset !important; /* Ensure no minimum width is causing issues */
+        overflow-x: visible !important; /* Ensure content is not hidden, allow it to overflow if absolutely necessary */
+        margin-right: 20px !important; /* Added space between contact info and hamburger */
+        margin-left: 0 !important; /* Ensure no rogue left margin */
+    }
+
+    /* Make phone and email links smaller on mobile */
+    #header .header-phone-link,
+    #header .header-email-link {
+        font-size: 0.75rem; /* Smaller font size for mobile */
+        margin-right: 5px !important; /* Tighter spacing between phone and email */
+        margin-left: 0 !important; /* Ensure no rogue left margin */
+        padding: 0 !important; /* Remove any default padding */
+        flex-shrink: 0 !important; /* CRITICAL: Prevent individual links from shrinking */
+    }
+
+    /* Hide the separator (|) on mobile */
+    #header .header-separator {
+        display: none !important;
+    }
+
+    /* Adjust the navigation menu (which contains the hamburger) */
+    #header .navmenu {
+        display: flex !important; /* Ensure it's a flex container */
+        margin-left: 0 !important; /* CRITICAL: Prevent it from pushing far right */
+        flex-shrink: 0 !important; /* Prevent the navmenu from shrinking */
+        flex-grow: 0 !important; /* Prevent the navmenu from growing */
+        justify-content: flex-start !important; /* Align its content to the left (hamburger itself) */
+    }
+
+    /* Target the hamburger icon specifically to ensure it doesn't get pushed */
+    #navmenu .mobile-nav-toggle {
+        margin-left: 0 !important; /* Ensure no auto margin is pushing it */
+        margin-right: 0 !important; /* No extra margin on its right */
+    }
+
+
+    /* Hide social links on mobile to ensure enough space for phone/email and hamburger */
+    #header .header-social-links {
+        display: none !important;
+        flex-grow: 0 !important; /* Ensure it doesn't try to take space */
+        flex-shrink: 0 !important; /* Ensure it doesn't try to take space */
+    }
+
+    /* Fine-tune for very small screens (e.g., iPhone SE) if needed */
+    @media (max-width: 575.98px) { /* Standard Bootstrap breakpoint for 'sm' */
+        #header .header-phone-link,
+        #header .header-email-link {
+            font-size: 0.65rem; /* Even smaller font on tiny screens */
+            margin-right: 3px !important; /* Reduce spacing further */
+        }
+        /* Reduce container padding on very small screens to give more space */
+        #header .container-fluid {
+            padding-left: 5px !important;
+            padding-right: 5px !important;
+        }
+    }
+}
