@@ -32,14 +32,14 @@
 
 <body class="contact-page">
 
-  <header id="header" class="header d-flex align-items-center light-background sticky-top">
+<header id="header" class="header d-flex align-items-center light-background sticky-top">
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
 
       <div class="header-contact d-flex align-items-center">
         <a href="tel:+1234567890" class="d-flex align-items-center me-3 text-decoration-none text-dark">
           <i class="bi bi-telephone-fill me-1" style="color: hotpink;"></i>
           <a href="tel:16472064841" style="color: inherit; text-decoration: none;">(647) 206-4841</a>
-          &nbsp; | &nbsp;
+          &nbsp; <span class="d-none d-md-inline">|</span> &nbsp;
         </a>
         <a href="mailto:youremail@example.com" class="d-flex align-items-center text-decoration-none text-dark">
           <i class="bi bi-envelope-fill me-1" style="color: hotpink;"></i>
@@ -50,10 +50,10 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html" class="active">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -160,25 +160,41 @@
 
   </main>
 
+ 
   <footer id="footer" class="footer light-background">
+    <div class="container py-4">
+      <div class="footer-main-content d-flex flex-column align-items-center">
+        <div class="copyright text-center mb-3">
+          <p>© <span>Copyright</span> <strong class="px-1 sitename">Leaside Pet Care</strong> <span>All Rights
+              Reserved</span></p>
+        </div>
 
-    <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">Leaside Pet Care</strong> <span>All Rights
-            Reserved<br></span></p>
-      </div>
-      <div class="social-links d-flex justify-content-center">
-        <a href="https://www.linkedin.com/company/leaside-pet-care" class="linkedin" target="_blank"
-          rel="noopener noreferrer">
-          <i class="bi bi-linkedin"></i>
-        </a>
-      </div>
-      <div class="credits">
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a
-          href=“https://themewagon.com>ThemeWagon
+        <div class="links-and-social-row d-flex flex-column flex-md-row align-items-center align-items-md-start mb-3">
+          <div class="footer-nav-container me-md-4">
+            <ul class="footer-nav-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="social-links d-flex justify-content-center">
+            <a href="https://www.linkedin.com/company/leaside-pet-care" class="linkedin" target="_blank"
+              rel="noopener noreferrer">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="credits text-center"> Designed by <a href="https://bootstrapmade.com/" target="_blank"
+            rel="noopener noreferrer" style="color: hotpink">BootstrapMade</a> Distributed by <a
+            href="https://themewagon.com" target="_blank" rel="noopener noreferrer"
+            style="color: hotpink">ThemeWagon</a>
+        </div>
+
       </div>
     </div>
-
   </footer>
 
   <!-- Scroll Top -->
