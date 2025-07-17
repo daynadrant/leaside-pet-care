@@ -1819,3 +1819,56 @@ button[type="submit"]:hover,
         }
     }
 }
+
+/* Custom Styles - Ensure this file is linked AFTER Bootstrap's CSS */
+
+/* --- Step 1: Ensure basic mobile display for the toggle and navmenu --- */
+/* This media query covers all screens smaller than 'xl' (Bootstrap's 1200px) */
+@media (max-width: 1199.98px) {
+    #header .navmenu {
+        margin-left: auto; /* Push navmenu to the right */
+        /* If navmenu itself has specific width/flex-basis, you might need to adjust */
+        flex-grow: 1; /* Allow navmenu to take up available space */
+        text-align: right; /* Align content (the toggle) within navmenu to the right */
+        display: flex; /* Ensure navmenu itself is a flex container to push the icon if needed */
+        justify-content: flex-end; /* Push content to the end of the flex container */
+        align-items: center; /* Vertically center the toggle */
+    }
+
+    #header .navmenu .mobile-nav-toggle {
+        /* Ensure the toggle itself is visible and acts as a flex item */
+        display: block; /* Or inline-block if you prefer */
+        /* If the icon is still centered, it might be due to the navmenu's width. */
+        /* Removing flex-grow: 1 from navmenu might center the icon instead if you only want it at the far right. */
+    }
+
+    /* Make sure other elements don't push it out */
+    #header .header-contact {
+        /* Let contact Shrink */
+        flex-shrink: 1;
+        /* You can try flex-basis: auto; as well */
+    }
+
+    #header .header-social-links {
+        /* Ensure social links are not interfering if they are present */
+        display: none; /* Hide social links on these smaller screens */
+    }
+}
+
+/* --- Step 2: Hide contact info on very small screens to make space --- */
+/* This media query targets screens smaller than 'md' (Bootstrap's 768px) */
+@media (max-width: 767.98px) {
+    #header .header-contact {
+        display: none; /* Hide phone and email to give space to the menu */
+    }
+
+    #header .navmenu {
+        /* Re-apply flex properties to ensure it behaves correctly with .header-contact gone */
+        margin-left: auto;
+        flex-grow: 1;
+        text-align: right;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+}
